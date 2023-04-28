@@ -1,0 +1,22 @@
+{
+  "name": "asteroid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start" : "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jibon0070/astroid.git"
+  },
+  "author": "A.R. Jibon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jibon0070/astroid/issues"
+  },
+  "homepage": "https://github.com/jibon0070/astroid#readme",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
