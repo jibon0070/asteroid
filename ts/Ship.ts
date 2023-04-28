@@ -10,7 +10,7 @@ export default class Ship implements Entity {
     private TURN_SPEED = .3;
     private velocity = new Vector(0, 0);
     private THRUST: number = .1;
-    private FRICTION: number = .1;
+    private FRICTION: number = .01;
 
     constructor(private game: Game) {
     }
@@ -59,5 +59,23 @@ export default class Ship implements Entity {
         //move
         this.position.x += this.velocity.x * delta_time;
         this.position.y += this.velocity.y * delta_time;
+
+        //handel edge of the ship
+        //left
+        if (this.position.x + this.size.x / 2 < 0) {
+            this.position.x = this.game.game_width + this.size.x / 2
+        }
+        //right
+        else if (this.position.x - this.size.x / 2 > this.game.game_width) {
+            this.position.x = 0 - this.size.x / 2
+        }
+        //top
+        if (this.position.y + this.size.y / 2 < 0) {
+            this.position.y = this.game.game_height + this.size.y / 2
+        }
+        //right
+        else if (this.position.y - this.size.y / 2 > this.game.game_height) {
+            this.position.y = 0 - this.size.y / 2
+        }
     }
 }
